@@ -72,8 +72,8 @@ import Layout from '../layouts/Layout.astro';
       margin: 0 auto 2.5rem;
       font-weight: 300;
     ">
-      Small-batch wildflower honey from McKinney, Texas —
-      straight from the hive, never over-processed.
+      Started with a swarm, a Yeti cooler, and zero proper gear.
+      Now making raw wildflower honey in McKinney, Texas — the way it's supposed to taste.
     </p>
 
     <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
@@ -121,25 +121,39 @@ import Layout from '../layouts/Layout.astro';
       <div>
         <p style="color:var(--gold); font-size:0.85rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Our Story</p>
         <h2 style="color:var(--green); font-size:clamp(2rem,4vw,2.8rem); margin-bottom:1.25rem;">
-          From Backyard Hives<br/>to Your Table
+          A Yeti Cooler and<br/>a Hoodie
         </h2>
         <div class="divider">✦ ✦ ✦</div>
         <p style="color:var(--text-soft); margin: 1.25rem 0; font-size:1.05rem;">
-          Home Sweet Honey started the way most good things do — with curiosity, a little courage,
-          and a deep respect for what bees have been doing for millions of years. We're a small
-          family operation right here in McKinney, Texas, keeping bees the old-fashioned way.
+          In March 2024, a swarm of bees landed at a local park in McKinney — and instead of
+          walking away, I grabbed what I had: a Yeti cooler, a hoodie, and a trucker hat.
+          That was my first capture. No proper gear, no training manual. Just curiosity and
+          a healthy respect for something remarkable.
+        </p>
+        <p style="color:var(--text-soft); font-size:1.05rem; margin-bottom:1.25rem;">
+          That scrappy afternoon at the park is where Home Sweet Honey was born. What started
+          as one wild colony in a cooler has grown into a real operation — hives, harvests,
+          and a genuine passion for bees and the raw honey they make.
         </p>
         <p style="color:var(--text-soft); font-size:1.05rem;">
-          Our honey is raw and unfiltered — which means it keeps all its natural pollen, enzymes,
-          and goodness intact. No heating, no over-processing. Just honey that actually tastes
-          like where it came from.
+          We're a small family operation right here in McKinney, Texas. Our honey is raw and
+          unfiltered — all the natural pollen, enzymes, and flavor intact. No shortcuts.
+          Just honey that tastes like where it came from.
         </p>
       </div>
 
-      <!-- Story photos: hive exterior + honey harvest -->
-      <div style="display:grid; grid-template-rows:1fr 1fr; gap:0.75rem; height:420px;">
-        <img src="/photos/story-hive.jpg" alt="Beehive in the garden" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
-        <img src="/photos/honey-harvest.jpg" alt="Honey harvest" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
+      <!-- Humble beginnings footage + hive photo -->
+      <div style="display:grid; grid-template-rows:1fr 1fr; gap:0.75rem; height:460px;">
+        <div style="overflow:hidden; border-radius:4px;">
+          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
+            <source src="/videos/humble-beginnings-1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div style="overflow:hidden; border-radius:4px;">
+          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
+            <source src="/videos/humble-beginnings-2.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   </section>
@@ -338,7 +352,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.9rem;
   ">
     <p style="font-family:'Playfair Display',serif; color:var(--cream); font-size:1.2rem; margin-bottom:0.5rem;">Home Sweet Honey</p>
-    <p style="margin-bottom:0.3rem;">McKinney, Texas · Raw · Unfiltered · Local</p>
+    <p style="margin-bottom:0.3rem;">McKinney, Texas · Raw · Unfiltered · Local · Est. 2024</p>
     <p style="margin-bottom:1rem;">
       <a href="mailto:samuelkaestner@gmail.com" style="color:var(--gold);">samuelkaestner@gmail.com</a>
     </p>
