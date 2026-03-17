@@ -1,0 +1,82 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = "Home Sweet Honey", description = "Raw, unfiltered wildflower honey from McKinney, TX. Small-batch, local, and honest." } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #F5F0E8;
+      --cream-dark: #EDE7D8;
+      --green:      #2D4A2D;
+      --green-mid:  #3D6B3D;
+      --sage:       #8FA882;
+      --sage-light: #C4D4BC;
+      --gold:       #C8973A;
+      --gold-light: #E8B96A;
+      --mauve:      #C4A49C;
+      --text:       #2A2A1E;
+      --text-soft:  #5A5A4A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.25;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Decorative bracket border (echoes label) */
+    .bracket-border {
+      border: 2px solid var(--green);
+      outline: 1px solid var(--sage-light);
+      outline-offset: 4px;
+    }
+
+    section { padding: 5rem 0; }
+    section:nth-child(even) { background: var(--cream-dark); }
+
+    /* Botanical divider */
+    .divider {
+      text-align: center;
+      color: var(--sage);
+      font-size: 1.4rem;
+      letter-spacing: 0.3rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <slot />
+</body>
+</html>
