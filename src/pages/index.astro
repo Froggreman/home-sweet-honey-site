@@ -142,18 +142,14 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
 
-      <!-- Humble beginnings footage + hive photo -->
-      <div style="display:grid; grid-template-rows:1fr 1fr; gap:0.75rem; height:460px;">
-        <div style="overflow:hidden; border-radius:4px;">
-          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-            <source src="/videos/humble-beginnings-1.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div style="overflow:hidden; border-radius:4px;">
-          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-            <source src="/videos/humble-beginnings-2.mp4" type="video/mp4" />
-          </video>
-        </div>
+      <!-- Humble beginnings footage — natural portrait aspect ratio -->
+      <div style="display:flex; gap:0.75rem; justify-content:center; align-items:flex-start;">
+        <video autoplay muted loop playsinline style="width:48%; border-radius:4px; display:block;">
+          <source src="/videos/humble-beginnings-1.mp4" type="video/mp4" />
+        </video>
+        <video autoplay muted loop playsinline style="width:48%; border-radius:4px; display:block;">
+          <source src="/videos/humble-beginnings-2.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </section>
@@ -180,8 +176,8 @@ import Layout from '../layouts/Layout.astro';
           text-align: left;
           box-shadow: 0 2px 12px rgba(45,74,45,0.07);
         ">
-          <div style="height:220px; overflow:hidden;">
-            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
+          <div style="overflow:hidden; border-radius:4px 4px 0 0;">
+            <video autoplay muted loop playsinline style="width:100%; display:block;">
               <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
           </div>
@@ -230,10 +226,14 @@ import Layout from '../layouts/Layout.astro';
   <section id="swarm">
     <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
 
-      <!-- Swarm removal visual -->
-      <div style="display:grid; grid-template-rows:1fr 1fr; gap:0.75rem; height:420px; order:2;">
-        <img src="/photos/swarm-roof.jpg" alt="Bee swarm on roof" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
-        <img src="/photos/swarm-scene.jpg" alt="Swarm removal in progress" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
+      <!-- Swarm removal visuals — natural sizing side by side -->
+      <div style="display:flex; gap:0.75rem; align-items:flex-start; order:2;">
+        <video autoplay muted loop playsinline style="width:48%; border-radius:4px; display:block;">
+          <source src="/videos/swarm-1.mp4" type="video/mp4" />
+        </video>
+        <video autoplay muted loop playsinline style="width:48%; border-radius:4px; display:block;">
+          <source src="/videos/swarm-2.mp4" type="video/mp4" />
+        </video>
       </div>
 
       <div style="order:1;">
@@ -296,15 +296,15 @@ import Layout from '../layouts/Layout.astro';
       <p style="color:var(--gold); font-size:0.85rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Behind the Scenes</p>
       <h2 style="color:var(--green); font-size:clamp(2rem,4vw,2.8rem); margin-bottom:0.5rem;">From the Hive</h2>
       <div class="divider">✦ ✦ ✦</div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1rem; margin-top:2rem;">
-        <video autoplay muted loop playsinline style="width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:4px;">
+      <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem;">
+        <video autoplay muted loop playsinline style="height:420px; width:auto; border-radius:4px; display:block;">
           <source src="/videos/humble-beginnings-1.mp4" type="video/mp4" />
         </video>
-        <video autoplay muted loop playsinline style="width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:4px;">
+        <video autoplay muted loop playsinline style="height:420px; width:auto; border-radius:4px; display:block;">
           <source src="/videos/honey-harvest.mp4" type="video/mp4" />
         </video>
-        <video autoplay muted loop playsinline style="width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:4px;">
-          <source src="/videos/swarm-1.mp4" type="video/mp4" />
+        <video autoplay muted loop playsinline style="height:420px; width:auto; border-radius:4px; display:block;">
+          <source src="/videos/swarm-2.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
