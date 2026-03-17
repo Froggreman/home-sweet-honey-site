@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
     "></div>
 
     <!-- Logo -->
-    <div style="margin: 0 auto 2rem; max-width:220px;">
+    <div style="margin: 0 auto 2rem; max-width:220px; position:relative; z-index:1;">
       <img
         src="/Home Sweet Honey.png"
         alt="Home Sweet Honey logo"
@@ -136,22 +136,10 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
 
-      <!-- Photo placeholder — swap src when Sam uploads -->
-      <div style="
-        background: var(--cream-dark);
-        border: 2px dashed var(--sage);
-        border-radius: 4px;
-        aspect-ratio: 4/3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        color: var(--sage);
-      ">
-        <!-- REPLACE: <img src="/photos/story-photo.jpg" alt="Beekeeper with hives" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" /> -->
-        <span style="font-size:3rem;">🐝</span>
-        <span style="font-size:0.85rem; font-family:'Lato',sans-serif;">Story photo coming soon</span>
+      <!-- Story photos: hive exterior + honey harvest -->
+      <div style="display:grid; grid-template-rows:1fr 1fr; gap:0.75rem; height:420px;">
+        <img src="/photos/story-hive.jpg" alt="Beehive in the garden" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
+        <img src="/photos/honey-harvest.jpg" alt="Honey harvest" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
       </div>
     </div>
   </section>
@@ -178,10 +166,10 @@ import Layout from '../layouts/Layout.astro';
           text-align: left;
           box-shadow: 0 2px 12px rgba(45,74,45,0.07);
         ">
-          <!-- REPLACE: <img src="/photos/wildflower-honey.jpg" alt="Wildflower Honey jar" style="width:100%;height:220px;object-fit:cover;" /> -->
-          <div style="height:220px; background:var(--cream-dark); display:flex; align-items:center; justify-content:center; color:var(--sage); font-size:0.85rem; flex-direction:column; gap:0.4rem;">
-            <span style="font-size:2.5rem;">🍯</span>
-            <span>Product photo coming soon</span>
+          <div style="height:220px; overflow:hidden;">
+            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
           </div>
           <div style="padding:1.5rem;">
             <h3 style="color:var(--green); font-size:1.3rem; margin-bottom:0.4rem;">Wildflower Honey</h3>
@@ -228,23 +216,10 @@ import Layout from '../layouts/Layout.astro';
   <section id="swarm">
     <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
 
-      <!-- Photo placeholder -->
-      <div style="
-        background: var(--cream);
-        border: 2px dashed var(--sage);
-        border-radius: 4px;
-        aspect-ratio: 4/3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        color: var(--sage);
-        order: 2;
-      ">
-        <!-- REPLACE: <img src="/photos/swarm-removal.jpg" alt="Swarm removal in progress" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" /> -->
-        <span style="font-size:3rem;">🐝</span>
-        <span style="font-size:0.85rem; font-family:'Lato',sans-serif;">Swarm photo coming soon</span>
+      <!-- Swarm removal visual -->
+      <div style="display:grid; grid-template-rows:1fr 1fr; gap:0.75rem; height:420px; order:2;">
+        <img src="/photos/swarm-roof.jpg" alt="Bee swarm on roof" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
+        <img src="/photos/swarm-scene.jpg" alt="Swarm removal in progress" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
       </div>
 
       <div style="order:1;">
@@ -300,19 +275,25 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ░░░ PHOTOS GALLERY (shows once Sam uploads) ░░░ -->
-  <!-- Uncomment and populate once photos are in /public/photos/
+  <!-- ░░░ GALLERY ░░░ -->
   <section>
     <div class="container" style="text-align:center;">
-      <h2 style="color:var(--green); font-size:2.2rem; margin-bottom:2rem;">From the Hive</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;">
-        <img src="/photos/photo1.jpg" alt="Hive photo" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px;" />
-        <img src="/photos/photo2.jpg" alt="Honey photo" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px;" />
-        <img src="/photos/photo3.jpg" alt="Beekeeper photo" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px;" />
+      <p style="color:var(--gold); font-size:0.85rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Behind the Scenes</p>
+      <h2 style="color:var(--green); font-size:clamp(2rem,4vw,2.8rem); margin-bottom:0.5rem;">From the Hive</h2>
+      <div class="divider">✦ ✦ ✦</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1rem; margin-top:2rem;">
+        <video autoplay muted loop playsinline style="width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:4px;">
+          <source src="/videos/humble-beginnings-1.mp4" type="video/mp4" />
+        </video>
+        <video autoplay muted loop playsinline style="width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:4px;">
+          <source src="/videos/honey-harvest.mp4" type="video/mp4" />
+        </video>
+        <video autoplay muted loop playsinline style="width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:4px;">
+          <source src="/videos/swarm-1.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </section>
-  -->
 
   <!-- ░░░ CONTACT ░░░ -->
   <section id="contact">
